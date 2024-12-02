@@ -1,0 +1,54 @@
+.block-label {
+  display: block;
+  margin-bottom: 20px;
+}
+.block-label input {
+  height: 10px;
+}
+input[type="file"] {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+input {
+  width: 100%;
+}
+
+span {
+  width: 30%;
+}
+.input-span span {
+  width: 100%;
+}
+
+.sudo-file {
+  display: flex;
+  justify-content: center;
+  border: 0px solid gray;
+  border-radius: 9px;
+  box-shadow: 2px 2px 3px rgb(200, 200, 200);
+  height: 100px;
+  width: 500px;
+  min-width: fit-content;
+  margin-bottom: 30px;
+  text-align: center;
+  line-height: 100px;
+}
+
+.sudo-image {
+  vertical-align: middle;
+}
+
+#pdf-label {
+  color: black;
+  font-weight: normal;
+}
+
+span img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}

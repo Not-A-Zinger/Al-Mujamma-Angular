@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Register</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div>
+        <a href="" style="color: black">الرئيسية</a
+        ><a href="login/collector"
+          ><img
+            width="30px"
+            height="30px"
+            src="register-account-symbol.png"
+            alt="account logo"
+            style="vertical-align: middle"
+          />تسجيل دخول</a
+        >
+      </div>
+      <img
+        src="extended-logo-header.png"
+        alt="logo"
+        width="200px"
+        height="100%"
+      />
+    </header>
+    <div class="main-body" id="mainBody">
+      <div class="collector-type-switch">
+        <button class="switch" (click)="showMarket()">حساب مجمع جديد</button>
+        <button class="switch" (click)="hideMarket()">
+          حساب مجمع خاص بمتجر
+        </button>
+      </div>
+      <h1>انشئ حسابك</h1>
+      <h2>انشئ حسابك لتبدأ رحلتك في متجرنا</h2>
+      <form action="login/collector" #form="ngForm">
+        <div class="input-name">
+          <label for="">الاسم</label>
+          <span class="input-span">
+            <input
+              type="text"
+              name="username"
+              required
+              [(ngModel)]="username"
+              minlength="3"
+            />
+            <span *ngIf="form.submitted && form.controls.username.invalid"
+              >الاسم يجب أن يكون 3 حروف أو اكثر</span
+            >
+          </span>
+        </div>
+        <div class="input-phone-number">
+          <label for="">رقم الجوال</label>
+          <span class="input-span">
+            <input
+              type="text"
+              name="phone"
+              required
+              [(ngModel)]="phone"
+              pattern="[0-9]{12}"
+            />
+            <span *ngIf="form.submitted && form.controls.phone.invalid"
+              >رقم الجوال يجب أن يكون صحيح</span
+            >
+          </span>
+        </div>
+        <div class="input-age">
+          <label for="">العمر</label>
+          <div class="double-input-div">
+            <span class="input-span">
+              <input
+                type="date"
+                name="ageSelection"
+                id="ageSelection"
+                [(ngModel)]="ageSelection"
+              />
+              <span
+                *ngIf="
+                  form.submitted &&
+                  (calcAge(form.controls.ageSelection) < 18 ||
+                    form.controls.ageSelection.value == undefined)
+                "
+                >العمر يجب أن يكون 18 أو اكثر</span
+              >
+            </span>
+            <label for="location" id="locationLabel" style="display: none"
+              >الموقع الجغرافي</label
+            >
+            <input type="text" name="" id="location" style="display: none" />
+          </div>
+        </div>
+        <label for="">البريد الالكتروني</label>
+        <span class="input-span">
+          <input
+            type="email"
+            name="email"
+            placeholder="abdefg&#64;gmail.com"
+            required
+            [(ngModel)]="email"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,99}$"
+          />
+          <span *ngIf="form.submitted && form.controls.email.invalid"
+            >البريد يجب أن يكون صحيح</span
+          >
+        </span>
+        <div class="input-password">
+          <label for="">كلمة المرور</label>
+          <span class="input-span">
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="************************"
+              required
+              [(ngModel)]="password"
+              minlength="6"
+              maxlength="20"
+            />
+            <span *ngIf="form.submitted && form.controls.password.invalid"
+              >كلمة المرور يجب أن تكون بين 6 و 20 رمز</span
+            >
+          </span>
+        </div>
+        <div class="input-idNum">
+          <label for="">رقم الهوية</label>
+          <span class="input-span">
+            <input
+              type="text"
+              name="idNum"
+              id="idNum"
+              required
+              [(ngModel)]="idNum"
+              pattern="[0-9]{10}"
+            />
+            <span *ngIf="form.submitted && form.controls.idNum.invalid"
+              >رقم الهوية يجب أن يكون مكون من 10 أرقام</span
+            >
+          </span>
+        </div>
+        <div class="input-idDoc">
+          <label for="">صورة الهوية</label>
+          <span class="input-span">
+            <input
+              type="file"
+              name="idDoc"
+              id="idDoc"
+              required
+              [(ngModel)]="idDoc"
+              accept="application/pdf,image/jpg,image/jpeg,image/png"
+            />
+            <label for="idDoc" id="idDoc-label"
+              ><svg
+                version="1.0"
+                xmlns="http://www.w3.org/2000/svg"
+                width="75px"
+                height="75px"
+                viewBox="0 0 253.000000 230.000000"
+                preserveAspectRatio="xMidYMid meet"
+              >
+                <metadata>
+                  Created by potrace 1.10, written by Peter Selinger 2001-2011
+                </metadata>
+                <g
+                  transform="translate(0.000000,230.000000) scale(0.100000,-0.100000)"
+                  fill="#000000"
+                  stroke="none"
+                >
+                  <path
+                    d="M463 1960 c-48 -25 -59 -37 -82 -81 -21 -39 -21 -52 -21 -754 l0
+             -715 320 0 320 0 0 40 0 40 -282 0 -283 0 2 495 2 495 773 0 773 0 1 -181 c2
+             -193 1 -188 52 -204 l23 -7 -3 319 -3 318 -29 38 c-56 73 -48 72 -456 75 -228
+             1 -366 6 -368 12 -2 6 -9 10 -15 10 -16 0 -221 102 -225 112 -2 4 -108 7 -235
+             7 -200 -1 -236 -4 -264 -19z m493 -71 c11 -9 30 -20 44 -24 14 -4 27 -11 30
+             -14 3 -4 40 -24 83 -45 l79 -37 347 1 c328 0 349 -1 388 -20 48 -23 63 -58 63
+             -147 l0 -53 -777 0 -778 0 2 127 c2 71 3 138 3 151 0 26 40 64 78 74 15 3 115
+             5 223 5 166 -2 200 -5 215 -18z"
+                  />
+                  <path
+                    d="M1416 1057 l-48 -73 -70 0 c-80 -1 -112 -19 -140 -76 -15 -31 -18
+             -77 -20 -332 l-3 -296 463 0 463 0 -3 316 -3 316 -36 32 c-38 35 -104 53 -152
+             41 -15 -4 -29 -1 -36 7 -20 23 -61 89 -61 97 0 4 -8 15 -18 24 -15 14 -42 17
+             -153 17 l-135 0 -48 -73z m309 -37 l23 -36 -144 1 c-101 0 -144 3 -144 11 0 7
+             7 14 15 18 8 3 15 12 15 20 0 22 17 25 119 23 l94 -2 22 -35z m215 -110 c0 -5
+             7 -10 15 -10 30 0 35 -50 33 -301 l-3 -249 -388 -3 -387 -2 0 260 c0 143 4
+             265 8 270 4 6 18 18 32 27 22 15 63 17 358 17 215 1 332 -3 332 -9z"
+                  />
+                  <path
+                    d="M1524 791 c-96 -53 -131 -159 -79 -240 73 -116 202 -131 292 -35 47
+             51 54 167 13 215 -11 12 -20 25 -20 29 0 3 -20 16 -45 28 -54 26 -118 28 -161
+             3z m145 -80 c18 -14 25 -31 28 -67 5 -43 2 -54 -22 -82 -23 -27 -34 -32 -71
+             -32 -63 0 -104 40 -104 101 1 53 27 89 73 98 41 9 67 4 96 -18z"
+                  />
+                </g></svg
+            ></label>
+            <span *ngIf="form.submitted && form.controls.idDoc.invalid"
+              >صورة الهوية مطلوبة</span
+            >
+            <span
+              style="color: rgb(84, 84, 84); font-weight: 100"
+              *ngIf="form.submitted && form.controls.idDoc.valid"
+              >{{
+                form.controls.idDoc.value.slice(
+                  form.controls.idDoc.value.lastIndexOf("\\") + 1
+                )
+              }}</span
+            >
+          </span>
+        </div>
+        <div>
+          <label for="" id="marketLabel">رقم المتجر المسجل</label>
+          <span class="input-span">
+            <input
+              type="text"
+              name="market"
+              id="marketNumber"
+              required
+              [(ngModel)]="market"
+            />
+            <span
+              id="marketValidation"
+              *ngIf="form.submitted && form.controls.market.invalid"
+              >رقم المتجر مطلوب</span
+            >
+          </span>
+        </div>
+        <div class="button-submit">
+          <button type="submit" (click)="registerForm(form)">تسجيل دخول</button>
+        </div>
+        <div class="prompt-has-account">
+          لديك حساب بالفعل؟
+          <a href="login/collector">تسجيل الدخول</a>
+        </div>
+      </form>
+    </div>
+
+    <footer>
+      <div class="upper-footer">
+        <section>
+          <div class="contact">تواصل معنا</div>
+          <div>+057776854</div>
+          <div>bobobobo&#64;gmail.com</div>
+          <div>Saudi Arabia - Riyadh</div>
+        </section>
+        <section>
+          <div class="us">من نحن</div>
+          <div>الدعم</div>
+          <div>الامان والسرية</div>
+          <div></div>
+        </section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section class="footer-logo">
+          <img
+            src="extended-logo-footer.png"
+            alt="logo"
+            width="100%"
+            height="100px"
+          />
+        </section>
+      </div>
+      <div class="lower-footer">جميع الحقوق محفوظة | المجمع 2024</div>
+    </footer>
+  </body>
+</html>
+`
