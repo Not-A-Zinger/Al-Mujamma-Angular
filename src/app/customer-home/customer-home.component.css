@@ -1,0 +1,63 @@
+* {
+  text-align: center;
+  font-family: "Almarai";
+}
+.slide-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.slide-indicator {
+  position: relative;
+  bottom: 40px;
+  width: 10px;
+  height: 10px;
+  gap: 10px;
+  background-color: #cccccc87;
+  border-radius: 100%;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+.slide-indicator.active {
+  transform: scaleX(1.5);
+  background-color: #ccccccc7;
+}
+
+.ads-container {
+  display: flex;
+  justify-content: center;
+}
+.categories {
+  display: flex;
+  margin-top: 5%;
+  justify-content: space-around;
+}
+.slider {
+  width: 33%;
+  text-align: center;
+  overflow: hidden;
+  border: 0px solid gray;
+
+  max-height: 100%;
+}
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+.slide {
+  flex: 0 0 100%;
+}
+.slide img {
+  width: 100%;
+  height: auto;
+}
+a {
+  cursor: pointer;
+}
+a:hover {
+  text-decoration: none;
+  color: rgb(1, 1, 1, 0.66);
+}
+a:visited {
+  color: black;
+}

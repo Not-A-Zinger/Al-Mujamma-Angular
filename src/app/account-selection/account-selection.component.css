@@ -1,0 +1,102 @@
+body {
+  font-family: "Almarai", sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  margin-bottom: 5%;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+header img {
+  padding-left: 10px;
+  padding-right: 20px;
+}
+
+h1 {
+  color: rgb(67, 151, 187);
+  font-weight: 500;
+}
+
+h2 {
+  color: rgb(152, 162, 179);
+  font-weight: 500;
+  font-size: small;
+  margin-bottom: 20px;
+}
+
+.main-body {
+  text-align: center;
+  width: 50%;
+  margin: auto;
+}
+
+form {
+  padding-bottom: 10%;
+  text-align: center;
+  direction: rtl;
+}
+
+button {
+  font-family: "Almarai", sans-serif;
+  color: black;
+  background-color: white;
+  font-size: 20px;
+  border-radius: 9px;
+  border: none;
+  height: 45px;
+  width: 150px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  color: white;
+  background-color: rgb(35, 170, 143);
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  text-align: center;
+  color: aliceblue;
+  bottom: 0;
+}
+
+.footer-logo {
+  display: flex;
+  justify-content: center;
+}
+.contact,
+.us {
+  font-size: larger;
+  font-weight: bold;
+}
+.upper-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 5%;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  text-align: justify;
+}
+.upper-footer section div {
+  margin-bottom: 10%;
+}
+
+.upper-footer section:nth-of-type(2) {
+  text-align: center;
+}
+.lower-footer {
+  background: rgb(50, 137, 175);
+  padding: 1%;
+}

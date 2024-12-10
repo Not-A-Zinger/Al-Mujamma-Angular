@@ -1,0 +1,25 @@
+.slider {
+  width: 33%;
+  text-align: center;
+  overflow: hidden;
+  border: 0px solid gray;
+  border-radius: 9px;
+  box-shadow: 2px 2px 3px rgb(200, 200, 200);
+  max-height: fit-content;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  max-height: fit-content;
+  padding-bottom: -10px;
+}
+
+.slide {
+  flex: 0 0 100%;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Register</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div>
+        <a href="" style="color: black">الرئيسية</a
+        ><a href="login/customer"
+          ><img
+            width="30px"
+            height="30px"
+            src="register-account-symbol.png"
+            alt="account logo"
+            style="vertical-align: middle"
+          />تسجيل دخول</a
+        >
+      </div>
+      <img
+        src="extended-logo-header.png"
+        alt="logo"
+        width="200px"
+        height="100%"
+      />
+    </header>
+    <div class="main-body">
+      <h1>انشئ حسابك</h1>
+      <h2>انشئ حسابك لتبدأ رحلتك في متجرنا</h2>
+      <form action="login/customer" #form="ngForm">
+        <div class="input-name">
+          <label for="">الاسم</label>
+          <span class="input-span">
+            <input
+              type="text"
+              name="name"
+              required
+              [(ngModel)]="name"
+              minlength="3"
+            />
+            <span *ngIf="form.submitted && form.controls.name.invalid"
+              >الاسم يجب أن يكون 3 حروف أو اكثر</span
+            >
+          </span>
+        </div>
+        <div class="input-phone-number">
+          <label for="phone">رقم الجوال</label>
+          <span class="input-span">
+            <input
+              type="text"
+              name="phone"
+              id="phone"
+              placeholder="9965xxxxxxxx"
+              required
+              [(ngModel)]="phone"
+              pattern="[0-9]{12}"
+              (mouseenter)="phoneInfo()"
+              (mouseleave)="emptyInfo()"
+            />
+            <span
+              style="display: inline"
+              *ngIf="form.submitted && form.controls.phone.invalid"
+              >رقم الجوال يجب أن يكون صحيح</span
+            >
+          </span>
+        </div>
+        <div class="input-email">
+          <label for="">البريد الالكتروني</label>
+          <span class="input-span">
+            <input
+              type="email"
+              name="email"
+              placeholder="abdefg&#64;gmail.com"
+              required
+              [(ngModel)]="email"
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,99}$"
+            />
+            <span *ngIf="form.submitted && form.controls.email.invalid"
+              >البريد يجب أن يكون صحيح</span
+            >
+          </span>
+        </div>
+        <div class="input-password">
+          <label for="">كلمة المرور</label>
+          <span class="input-span">
+            <input
+              type="password"
+              name="password"
+              id=""
+              placeholder="************************"
+              required
+              [(ngModel)]="password"
+              minlength="6"
+              maxlength="20"
+            />
+            <span *ngIf="form.submitted && form.controls.password.invalid"
+              >كلمة المرور يجب أن تكون بين 6 و 20 رمز</span
+            >
+          </span>
+        </div>
+        <span class="validInfo">.</span>
+        <div class="button-submit" (click)="registerForm(form)">
+          <button type="submit">تسجيل دخول</button>
+        </div>
+
+        <div class="prompt-has-account">
+          لديك حساب بالفعل؟
+          <a href="login/customer">تسجيل الدخول</a>
+        </div>
+      </form>
+    </div>
+
+    <footer>
+      <div class="upper-footer">
+        <section>
+          <div class="contact">تواصل معنا</div>
+          <div>+057776854</div>
+          <div>bobobobo&#64;gmail.com</div>
+          <div>Saudi Arabia - Riyadh</div>
+        </section>
+        <section>
+          <div class="us">من نحن</div>
+          <div>الدعم</div>
+          <div>الامان والسرية</div>
+          <div></div>
+        </section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section class="footer-logo">
+          <img
+            src="extended-logo-footer.png"
+            alt="logo"
+            width="100%"
+            height="100px"
+          />
+        </section>
+      </div>
+      <div class="lower-footer">جميع الحقوق محفوظة | المجمع 2024</div>
+    </footer>
+  </body>
+</html>

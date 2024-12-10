@@ -1,0 +1,76 @@
+* {
+  font-family: "Almarai";
+  text-align: center;
+}
+.main {
+  direction: rtl;
+}
+.main label {
+  width: fit-content;
+  margin: 10px;
+}
+input::placeholder {
+  padding: 25px 20px 0px 10px;
+  height: 30px;
+  overflow: hidden;
+}
+.market-list {
+  display: flex;
+  box-shadow: 2px 2px 30px rgb(200, 200, 200);
+  border-radius: 30px;
+  margin: 1% 20% 1% 20%;
+  overflow: auto;
+  min-height: 223.021px;
+  direction: rtl;
+  background-color: white;
+}
+select {
+  padding: 10px;
+}
+.market-list span {
+  width: fit-content;
+  margin: 10px 10px 10px 10px;
+}
+.market-list section,
+.market-list span {
+  border-color: white;
+  border-style: solid;
+}
+.market-list img {
+  width: auto;
+  height: 100px;
+  object-fit: contain;
+}
+.market-list section {
+  min-width: 250px;
+}
+.market-list section:hover {
+  border-color: rgb(0, 0, 0, 0.25);
+  border-style: solid;
+  cursor: pointer;
+}
+.market-list span {
+  cursor: pointer;
+}
+.list-element {
+  padding: 10px;
+}
+.categories {
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 100px;
+  direction: rtl;
+}
+.categories a {
+  color: black;
+}
+.categories a:hover {
+  text-decoration: none;
+  color: rgb(1, 1, 1, 0.5);
+}
+
+footer {
+  margin-left: 0%;
+  width: 100%;
+}

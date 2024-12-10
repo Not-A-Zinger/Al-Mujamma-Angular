@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div>
+        <a href="" style="color: black">الرئيسية</a
+        ><a href="register/customer"
+          ><img
+            width="30px"
+            height="30px"
+            src="register-account-symbol.png"
+            alt="account logo"
+            style="vertical-align: middle"
+          />انشاء حساب</a
+        >
+      </div>
+      <img
+        src="extended-logo-header.png"
+        alt="logo"
+        width="200px"
+        height="100%"
+      />
+    </header>
+    <section class="slideshow">
+      <div class="ads-container">
+        <div class="slider">
+          <div
+            class="slides"
+            [style.transform]="'translateX(' + -currentSlide * 100 + '%)'"
+          >
+            <div *ngFor="let slide of slides" class="slide">
+              <img [src]="slide.image" alt="ad" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-indicators">
+        <span
+          class="slide-indicator"
+          *ngFor="let slide of slides; let i = index"
+          (click)="showSlide(i)"
+          [class.active]="currentSlide === i"
+        ></span>
+      </div>
+    </section>
+    <section class="categories">
+      <a href="customer/products">المواد الغذائية</a>
+      <a href="customer/products?q=الكترونيات">الكترونيات</a>
+      <a href="customer/products">المنتجات</a>
+      <a href="customer/products?q=موضة">موضة</a>
+    </section>
+
+    <footer>
+      <div class="upper-footer">
+        <section>
+          <div class="contact">تواصل معنا</div>
+          <div>+057776854</div>
+          <div>bobobobo"&#64;"gmail.com</div>
+          <div>Saudi Arabia - Riyadh</div>
+        </section>
+        <section>
+          <div class="us">من نحن</div>
+          <div>الدعم</div>
+          <div>الامان والسرية</div>
+          <div></div>
+        </section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section class="footer-logo">
+          <img
+            src="extended-logo-footer.png"
+            alt="logo"
+            width="100%"
+            height="100px"
+          />
+        </section>
+      </div>
+      <div class="lower-footer">جميع الحقوق محفوظة | المجمع 2024</div>
+    </footer>
+  </body>
+</html>

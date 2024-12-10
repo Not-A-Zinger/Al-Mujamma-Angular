@@ -1,0 +1,23 @@
+.main-body {
+  text-align: center;
+  margin-bottom: 7%;
+}
+button {
+  color: black;
+  background: white;
+  font-size: 1.33rem;
+  font-weight: 400;
+  width: 30%;
+  height: fit-content;
+  padding: 20px 20px 20px 20px;
+}
+.first-button {
+  margin-right: 1%;
+}
+.second-button {
+  margin-left: 1%;
+}
+button:hover {
+  color: white;
+  background: #23aa8f;
+}
